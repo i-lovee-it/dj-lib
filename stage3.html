@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>세 번째 단서</title>
+
+<style>
+body{
+    font-family:'맑은 고딕';
+    background:#f6fff6;
+    padding:20px;
+}
+.card{
+    background:white;
+    max-width:450px;
+    margin:auto;
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+}
+input{
+    width:100%;
+    padding:15px;
+    margin-top:15px;
+}
+button{
+    width:100%;
+    padding:15px;
+    margin-top:15px;
+    background:#4caf50;
+    color:white;
+    border:none;
+    border-radius:10px;
+}
+</style>
+
+<script>
+function checkAnswer(){
+
+let answer =
+document.getElementById("answer")
+.value
+.replace(/\s/g,"");
+
+if(
+answer=="회원증" ||
+answer=="도서관회원증" ||
+answer=="도서관카드"
+){
+    location.href="stage4.html";
+}
+else{
+    alert("앗! 다시 생각해보세요.");
+}
+
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>💳 세 번째 단서</h2>
+
+<p style="font-size:90px;">📚💳</p>
+
+<p>
+책을 빌릴 때 필요한 것은 무엇일까요?
+</p>
+
+<input id="answer">
+
+<button onclick="checkAnswer()">
+확인
+</button>
+
+</div>
+
+</body>
+</html>
