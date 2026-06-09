@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>첫 번째 단서</title>
+
+<style>
+body{
+    font-family:'맑은 고딕';
+    background:#f8fbff;
+    padding:20px;
+}
+
+.card{
+    background:white;
+    max-width:450px;
+    margin:auto;
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+input{
+    width:100%;
+    padding:15px;
+    margin-top:15px;
+    border:1px solid #ccc;
+    border-radius:10px;
+    font-size:18px;
+}
+
+button{
+    margin-top:15px;
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#3b82f6;
+    color:white;
+    font-size:18px;
+}
+</style>
+
+<script>
+
+function checkAnswer(){
+
+let answer =
+document.getElementById("answer")
+.value
+.replace(/\s/g,"");
+
+if(
+answer=="어린이자료실"
+){
+    location.href="stage2.html";
+}
+else{
+    alert("앗! 다시 생각해보세요!");
+}
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>🔍 첫 번째 단서</h2>
+
+<p style="font-size:80px;">
+📚👧👦
+</p>
+
+<p>
+책요정이 가장 좋아하는 곳은 어디일까요?
+</p>
+
+<input
+id="answer"
+placeholder="정답 입력">
+
+<button onclick="checkAnswer()">
+확인
+</button>
+
+</div>
+
+</body>
+</html>
