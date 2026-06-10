@@ -3,73 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <title>사라진 책요정을 찾아라!</title>
 
 <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
 body{
-    font-family:'맑은 고딕', sans-serif;
-    background:linear-gradient(#dff4ff,#ffffff);
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-}
-
-.card{
-    background:white;
-    max-width:450px;
-    width:100%;
-    border-radius:25px;
-    padding:30px;
+    margin:0;
+    background:#fdf7ff;
     text-align:center;
-    box-shadow:0 5px 20px rgba(0,0,0,0.1);
 }
 
-h1{
-    color:#3b82f6;
-    margin-bottom:15px;
-}
-
-.fairy{
-    font-size:90px;
-    margin:15px 0;
-}
-
-.story{
-    line-height:1.7;
-    margin:20px 0;
-    color:#444;
-}
-
-button{
+.main-image{
     width:100%;
-    border:none;
-    border-radius:50px;
-    padding:18px;
-    font-size:20px;
-    font-weight:bold;
-    background:#3b82f6;
+    max-width:600px;
+}
+
+.start-btn{
+    background:#ff77aa;
     color:white;
+    border:none;
+    border-radius:15px;
+    padding:15px 30px;
+    font-size:22px;
+    font-weight:bold;
+    margin:20px;
     cursor:pointer;
-}
-
-button:hover{
-    opacity:0.9;
-}
-
-.notice{
-    margin-top:20px;
-    font-size:14px;
-    color:#777;
 }
 
 </style>
@@ -77,33 +35,16 @@ button:hover{
 
 <body>
 
-<div class="card">
+<img src="images/title.png"
+     class="main-image"
+     alt="사라진 책요정을 찾아라">
 
-<h1>🧚 사라진 책요정을 찾아라!</h1>
+<br>
 
-<div class="fairy">📚✨🧚</div>
-
-<div class="story">
-어느 날 아침,<br><br>
-
-당진도서관을 지켜주는 책요정이 감쪽같이 사라졌어요!<br><br>
-
-다행히 책요정은 도서관 곳곳에
-단서를 남겨두었습니다.<br><br>
-
-단서를 따라가며 암호를 완성하고
-책요정을 찾아주세요!
-</div>
-
-<button onclick="location.href='stage1.html'">
-탐험 시작하기 🔍
+<button class="start-btn"
+onclick="location.href='stage1.html'">
+탐험 시작하기
 </button>
-
-<div class="notice">
-유아 및 초등학생 누구나 참여 가능!
-</div>
-
-</div>
 
 </body>
 </html>
