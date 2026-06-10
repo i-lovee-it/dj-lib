@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>사라진 책요정을 찾아라!</title>
 
 <style>
 
 body{
     margin:0;
+    padding:0;
     background:#fdf7ff;
     text-align:center;
 }
@@ -16,17 +18,19 @@ body{
 .main-image{
     width:100%;
     max-width:600px;
+    display:block;
+    margin:auto;
 }
 
 .start-btn{
-    background:#ff77aa;
-    color:white;
+    margin:20px;
+    padding:15px 30px;
     border:none;
     border-radius:15px;
-    padding:15px 30px;
+    background:#ff7eb6;
+    color:white;
     font-size:22px;
     font-weight:bold;
-    margin:20px;
     cursor:pointer;
 }
 
@@ -35,15 +39,13 @@ body{
 
 <body>
 
-<img src="images/title.png"
+<img src="images/index.png"
      class="main-image"
      alt="사라진 책요정을 찾아라">
 
-<br>
-
 <button class="start-btn"
 onclick="location.href='stage1.html'">
-탐험 시작하기
+🔍 탐험 시작하기
 </button>
 
 </body>
