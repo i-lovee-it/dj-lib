@@ -10,27 +10,31 @@
 
 body{
     margin:0;
-    padding:0;
     background:#fdf7ff;
     text-align:center;
 }
 
-.main-image{
-    width:100%;
+.image-wrap{
+    position:relative;
     max-width:600px;
-    display:block;
     margin:auto;
 }
 
-.start-btn{
-    margin:20px;
-    padding:15px 30px;
-    border:none;
-    border-radius:15px;
-    background:#ff7eb6;
-    color:white;
-    font-size:22px;
-    font-weight:bold;
+.main-image{
+    width:100%;
+    display:block;
+}
+
+/* 투명 클릭 영역 */
+.start-area{
+    position:absolute;
+
+    left:23%;
+    bottom:8%;
+
+    width:54%;
+    height:11%;
+
     cursor:pointer;
 }
 
@@ -39,14 +43,16 @@ body{
 
 <body>
 
-<img src="images/index.png"
-     class="main-image"
-     alt="사라진 책요정을 찾아라">
+<div class="image-wrap">
 
-<button class="start-btn"
-onclick="location.href='stage1.html'">
-🔍 탐험 시작하기
-</button>
+    <img src="images/index.png"
+         class="main-image"
+         alt="사라진 책요정을 찾아라">
+
+    <a href="stage1.html"
+       class="start-area"></a>
+
+</div>
 
 </body>
 </html>
