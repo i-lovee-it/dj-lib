@@ -7,27 +7,121 @@
 <title>첫 번째 단서</title>
 
 <style>
+
 body{
     margin:0;
     padding:0;
     background:#fdf7ff;
     text-align:center;
+    font-family:'Pretendard', sans-serif;
+}
+
+.container{
+    position:relative;
+    max-width:600px;
+    margin:auto;
 }
 
 .stage-image{
     width:100%;
-    max-width:600px;
     display:block;
-    margin:auto;
 }
+
+/* 정답 입력 영역 */
+.answer-box{
+    position:absolute;
+    bottom:130px;
+    left:50%;
+    transform:translateX(-50%);
+    width:75%;
+}
+
+.answer-input{
+    width:100%;
+    padding:16px;
+    font-size:20px;
+    text-align:center;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.35);
+    backdrop-filter:blur(8px);
+
+    border:2px solid rgba(255,255,255,0.7);
+    box-sizing:border-box;
+}
+
+.answer-input:focus{
+    outline:none;
+}
+
+.submit-btn{
+    margin-top:12px;
+    width:100%;
+    padding:15px;
+
+    border:none;
+    border-radius:20px;
+
+    background:#ff7eb6;
+    color:white;
+
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
 </style>
 </head>
 
 <body>
 
-<img src="images/stage1.png"
-     class="stage-image"
-     alt="첫 번째 단서">
+<div class="container">
+
+    <img src="images/stage1.png"
+         class="stage-image"
+         alt="첫 번째 단서">
+
+    <div class="answer-box">
+
+        <input
+            type="text"
+            id="answer"
+            class="answer-input"
+            placeholder="정답 입력">
+
+        <button
+            class="submit-btn"
+            onclick="checkAnswer()">
+            확인하기
+        </button>
+
+    </div>
+
+</div>
+
+<script>
+
+function checkAnswer(){
+
+    let answer =
+    document.getElementById("answer")
+    .value
+    .replace(/\s/g,"")
+    .toLowerCase();
+
+    if(
+        answer === "어린이자료실" ||
+        answer === "어린이자료실!"
+    ){
+        location.href="stage2.html";
+    }
+    else{
+        alert("앗! 다시 한번 찾아보세요 🔍");
+    }
+}
+
+</script>
 
 </body>
 </html>
