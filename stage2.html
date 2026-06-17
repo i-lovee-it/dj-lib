@@ -2,82 +2,96 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>두 번째 단서</title>
 
 <style>
 body{
-    font-family:'맑은 고딕';
-    background:#fff8f2;
-    padding:20px;
-}
-.card{
-    background:white;
-    max-width:450px;
-    margin:auto;
-    border-radius:20px;
-    padding:25px;
+    margin:0;
+    padding:0;
+    background:#fff7fb;
     text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    font-family:'Pretendard', sans-serif;
 }
-input{
-    width:100%;
-    padding:15px;
-    margin-top:15px;
-    border-radius:10px;
-    border:1px solid #ccc;
+
+.container{
+    position:relative;
+    max-width:600px;
+    margin:auto;
 }
-button{
+
+.main-image{
     width:100%;
-    padding:15px;
-    margin-top:15px;
+    display:block;
+}
+
+/* 이미지 속 입력칸 위치 */
+.answer-input{
+    position:absolute;
+
+    /* 필요하면 여기 숫자만 조정 */
+    bottom:55px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:70%;
+    height:52px;
+
     border:none;
-    border-radius:10px;
-    background:#ff8a65;
-    color:white;
+    outline:none;
+
+    background:transparent;
+
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+    color:#d95b96;
+}
+
+.answer-input::placeholder{
+    color:#f2a8c7;
 }
 </style>
-
-<script>
-function checkAnswer(){
-
-let answer =
-document.getElementById("answer")
-.value
-.replace(/\s/g,"");
-
-if(answer=="토끼"){
-    location.href="stage3.html";
-}
-else{
-    alert("다시 생각해보세요!");
-}
-
-}
-</script>
-
 </head>
 
 <body>
 
-<div class="card">
+<div class="container">
 
-<h2>🐰 두 번째 단서</h2>
+    <img src="images/stage2.png"
+         class="main-image"
+         alt="두 번째 단서">
 
-<p style="font-size:90px;">🐰</p>
-
-<p>
-사진 속 동물은 무엇일까요?
-</p>
-
-<input id="answer" placeholder="정답 입력">
-
-<button onclick="checkAnswer()">
-확인
-</button>
+    <input
+        type="text"
+        id="answer"
+        class="answer-input"
+        placeholder=""
+        autocomplete="off">
 
 </div>
+
+<script>
+document.getElementById("answer").addEventListener("keypress", function(e){
+
+    if(e.key === "Enter"){
+
+        let answer = this.value
+            .replace(/\s/g,"")
+            .toLowerCase();
+
+        if(
+            answer === "토끼"
+        ){
+            location.href="stage3.html";
+        }else{
+            alert("앗! 다시 생각해보세요 🧚");
+        }
+    }
+
+});
+</script>
 
 </body>
 </html>
