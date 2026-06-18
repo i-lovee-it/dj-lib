@@ -4,77 +4,102 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>마지막 단서</title>
+<title>네 번째 단서</title>
 
 <style>
+
 body{
-    font-family:'맑은 고딕';
-    background:#eef7ff;
-    padding:20px;
-}
-.card{
-    background:white;
-    max-width:450px;
-    margin:auto;
-    border-radius:20px;
-    padding:25px;
+    margin:0;
+    padding:0;
+    background:#000;
     text-align:center;
 }
-input{
+
+.poster-wrap{
+    position:relative;
     width:100%;
-    padding:15px;
-    margin-top:15px;
+    max-width:600px;
+    margin:auto;
 }
-button{
+
+.poster{
     width:100%;
-    padding:15px;
-    margin-top:15px;
-    background:#2196f3;
-    color:white;
+    display:block;
+}
+
+.answer-input{
+    position:absolute;
+
+    bottom:3.8%;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:68%;
+    height:48px;
+
     border:none;
-    border-radius:10px;
+    outline:none;
+
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(3px);
+
+    border-radius:12px;
+
+    font-size:22px;
+    text-align:center;
+
+    color:#444;
 }
+
+.answer-input::placeholder{
+    color:#999;
+}
+
 </style>
-
-<script>
-function checkAnswer(){
-
-let answer =
-document.getElementById("answer")
-.value
-.replace(/\s/g,"");
-
-if(answer=="400"){
-    location.href="success.html";
-}
-else{
-    alert("힌트 : 자연과학!");
-}
-
-}
-</script>
-
 </head>
 
 <body>
 
-<div class="card">
+<div class="poster-wrap">
 
-<h2>🔢 마지막 단서</h2>
+    <img src="images/stage4.png"
+         class="poster"
+         alt="네 번째 단서">
 
-<p style="font-size:90px;">🦖🦋🌳</p>
-
-<p>
-동물, 식물, 공룡 책이 있는 곳은 몇 백번대일까요?
-</p>
-
-<input id="answer">
-
-<button onclick="checkAnswer()">
-확인
-</button>
+    <input
+        type="text"
+        id="answer"
+        class="answer-input"
+        placeholder="정답 입력">
 
 </div>
+
+<script>
+
+const input = document.getElementById("answer");
+
+input.addEventListener("keypress", function(e){
+
+    if(e.key === "Enter"){
+
+        let answer = input.value
+            .trim()
+            .replaceAll(" ","");
+
+        if(
+            answer === "자연과학" ||
+            answer === "400" ||
+            answer === "400번대"
+        ){
+            location.href="success.html";
+        }else{
+            alert("다시 생각해보자!");
+        }
+    }
+
+});
+
+</script>
 
 </body>
 </html>
