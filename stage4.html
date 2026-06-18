@@ -27,7 +27,6 @@ body{
     display:block;
 }
 
-/* 이미지 속 입력칸 위에만 얹어지는 투명 입력창 */
 .answer-input{
     position:absolute;
 
@@ -96,16 +95,19 @@ input.addEventListener("keypress", function(e){
 
             wrongCount++;
 
-            if(wrongCount >= 3){
-
-                alert(
-                    "힌트!\n\n" +
-                    "자연과학 책은 몇 번대 서가에 있을까?"
-                );
-
-            }else{
+            if(wrongCount === 1){
 
                 alert("다시 생각해보자!");
+
+            }
+            else if(wrongCount === 2){
+
+                alert("📚 힌트!\n\n자연과학은 몇 번일까?");
+
+            }
+            else{
+
+                alert("📚 추가 힌트!\n\n자연과학은 400번대에 있어!");
 
             }
 
