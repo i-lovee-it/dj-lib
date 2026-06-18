@@ -27,6 +27,7 @@ body{
     display:block;
 }
 
+/* 이미지 속 입력칸 위치에 맞춘 투명 입력창 */
 .answer-input{
     position:absolute;
 
@@ -99,15 +100,9 @@ input.addEventListener("keypress", function(e){
 
                 alert("다시 생각해보자!");
 
-            }
-            else if(wrongCount === 2){
+            }else{
 
                 alert("📚 힌트!\n\n자연과학은 몇 번일까?");
-
-            }
-            else{
-
-                alert("📚 추가 힌트!\n\n자연과학은 400번대에 있어!");
 
             }
 
